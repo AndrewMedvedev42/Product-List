@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux"
-import { checkProductDataType } from "./modules/functions";
 import { loadProducts } from "./services/actions/postProduct";
 import axios from "axios";
 
