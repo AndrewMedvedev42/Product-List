@@ -1,0 +1,54 @@
+input{
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+
+input[type=submit], button{
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    font-size: 17.5px;
+    font-weight: 700;
+}
+
+input[type=submit]:hover, button:hover{
+    opacity: .75;
+}
+
+input[type=submit]:active, button:active{
+    opacity: .5;
+}
+
+.submit-button{
+    background-color: rgb(131, 131, 255);
+}
+
+.danger-button{
+    background-color: crimson;
+}
+
+.form-section{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-form-section{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+li{
+    list-style: none;
+    margin: 5px;
+}
