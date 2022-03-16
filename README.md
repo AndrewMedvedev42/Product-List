@@ -1,5 +1,5 @@
 # Product List
 
-To start the project, run npm run start or ayrn start
+To start the project, run npm run start or yarn start
 
-To start the json-server, run npm run json-server or ayrn json-server
+To start the json-server, run npm run json-server or yarn json-server
