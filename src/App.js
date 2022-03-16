@@ -37,6 +37,19 @@ function App() {
       alert(error)
     }
   }
+
+  const addComment = (event, index) => {
+    event.preventDefault()
+    axios.get(`http://localhost:8000/products/${index}`)
+        .then((res) =>{
+          res.data.comments.push(event.target.comment.value)
+          console.log(res.data.comments);
+
+          axios.patch(`http://localhost:8000/products/${index}`, {comments:res.data.comments}).then(res=>dispatch(loadProducts()))
+        })
+        .catch(err=>alert(err));
+  }
+
   return (
     <div className="App">
       <section className="form-section">
@@ -63,7 +76,7 @@ function App() {
               if(a.name < b.name) { return -1; }
               if(a.name > b.name) { return 1; }
               return 0;
-          }).map((item)=>{
+          }).map((item, index)=>{
               const {id, imageUrl, name, count, size, weight, comments} = item
               return <li key={id}>
                       <img src={imageUrl}/>
@@ -72,8 +85,8 @@ function App() {
                       <h5>{size.width}</h5>
                       <h5>{size.height}</h5>
                       <h4>{weight}</h4>
-                      <form>
-                        <input type="text" placeholder="Leave a comment"/>
+                      <form onSubmit={(event)=>{addComment(event, index)}}>
+                        <input name="comment" type="text" placeholder="Leave a comment" required/>
                         <input type="submit" className="submit-button" value="Add"/>
                       </form>
                       <ul>
